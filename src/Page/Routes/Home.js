@@ -29,7 +29,8 @@ export default function Home() {
         <MainTitle value={traduction[selectedLanguage]["Retrouvez n'importe quel pokemon"]} />
 
         <Searchbar placeholder={traduction[selectedLanguage]['Effectuez une recherche']} />
-        <div className="flex gap-4 mt-4 flex-wrap justify-center">
+
+        <div className="flex gap-2 mt-8 flex-wrap justify-center max-w-3xl">
           {Object.keys(Types).map((type) => (
             <TypeFilterButton
               key={type}
