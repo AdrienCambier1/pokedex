@@ -6,7 +6,7 @@ import Pokemon from './Routes/Pokemon'
 
 export default function Main() {
   return (
-    <main className="min-h-screen pt-28 p-10 relative bg-zinc-50 dark:bg-black">
+    <main className="min-h-screen pt-28 p-10 relative bg-zinc-100 dark:bg-zinc-900">
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

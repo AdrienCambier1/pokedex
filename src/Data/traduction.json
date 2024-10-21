@@ -1,0 +1,79 @@
+{
+  "ko": {
+    "Thème": "테마",
+    "Accueil": "홈",
+    "Hauteur": "높이",
+    "Poids": "무게",
+    "Retour à la recherche": "검색으로 돌아가기",
+    "Statistiques": "통계",
+    "Compétences": "기술",
+    "Retrouvez n'importe quel pokemon": "어떤 포켓몬도 찾아보세요",
+    "Effectuez une recherche": "검색하세요"
+  },
+  "ja": {
+    "Thème": "テーマ",
+    "Accueil": "ホーム",
+    "Hauteur": "高さ",
+    "Poids": "重さ",
+    "Retour à la recherche": "検索に戻る",
+    "Statistiques": "統計",
+    "Compétences": "技",
+    "Retrouvez n'importe quel pokemon": "どのポケモンも見つけましょう",
+    "Effectuez une recherche": "検索を行う"
+  },
+  "fr": {
+    "Thème": "Thème",
+    "Accueil": "Accueil",
+    "Hauteur": "Hauteur",
+    "Poids": "Poids",
+    "Retour à la recherche": "Retour à la recherche",
+    "Statistiques": "Statistiques",
+    "Compétences": "Compétences",
+    "Retrouvez n'importe quel pokemon": "Retrouvez n'importe quel Pokémon",
+    "Effectuez une recherche": "Effectuez une recherche"
+  },
+  "de": {
+    "Thème": "Thema",
+    "Accueil": "Startseite",
+    "Hauteur": "Höhe",
+    "Poids": "Gewicht",
+    "Retour à la recherche": "Zurück zur Suche",
+    "Statistiques": "Statistiken",
+    "Compétences": "Fähigkeiten",
+    "Retrouvez n'importe quel pokemon": "Finde jeden beliebigen Pokémon",
+    "Effectuez une recherche": "Eine Suche durchführen"
+  },
+  "es": {
+    "Thème": "Tema",
+    "Accueil": "Inicio",
+    "Hauteur": "Altura",
+    "Poids": "Peso",
+    "Retour à la recherche": "Volver a la búsqueda",
+    "Statistiques": "Estadísticas",
+    "Compétences": "Habilidades",
+    "Retrouvez n'importe quel pokemon": "Encuentra cualquier Pokémon",
+    "Effectuez une recherche": "Realiza una búsqueda"
+  },
+  "it": {
+    "Thème": "Tema",
+    "Accueil": "Home",
+    "Hauteur": "Altezza",
+    "Poids": "Peso",
+    "Retour à la recherche": "Torna alla ricerca",
+    "Statistiques": "Statistiche",
+    "Compétences": "Abilità",
+    "Retrouvez n'importe quel pokemon": "Trova qualsiasi Pokémon",
+    "Effectuez une recherche": "Effettua una ricerca"
+  },
+  "en": {
+    "Thème": "Theme",
+    "Accueil": "Home",
+    "Hauteur": "Height",
+    "Poids": "Weight",
+    "Retour à la recherche": "Back to search",
+    "Statistiques": "Statistics",
+    "Compétences": "Skills",
+    "Retrouvez n'importe quel pokemon": "Find any Pokémon",
+    "Effectuez une recherche": "Perform a search"
+  }
+}

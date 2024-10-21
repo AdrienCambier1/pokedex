@@ -1,18 +1,18 @@
-import backgroundImage from '../Images/background.jpeg'
 import React from 'react'
 
-export default function Card2({ children }) {
+export default function Card2({ children, image }) {
   const hasImage = React.Children.toArray(children).some((child) => child.type === 'img')
 
   return (
     <div
       style={{
-        backgroundImage: hasImage ? `url(${backgroundImage})` : null,
+        backgroundImage: `url(${image})`,
         backgroundSize: 'cover',
       }}
-      className="w-full dark:bg-neutral-900 bg-zinc-50 rounded-lg flex flex-col"
+      className="w-full rounded-lg flex flex-col overflow-hidden relative"
     >
-      {children}
+      <div className="w-full flex flex-col z-40">{children}</div>
+      <div className="w-full h-full absolute bg-black/25" />
     </div>
   )
 }

@@ -5,9 +5,12 @@ import LanguageChange from '../Components/LanguageChange.js'
 import Button2 from '../Components/Button2.js'
 import { useContext } from 'react'
 import { ThemeContext } from '../Contexts/ThemeContext.js'
+import { LanguageContext } from '../Contexts/LanguageContext.js'
+import traduction from '../Data/traduction.json'
 
 export default function Header() {
   const { Theme, setTheme } = useContext(ThemeContext)
+  const { selectedLanguage } = useContext(LanguageContext)
 
   function handleToggleTheme() {
     const newTheme = Theme === 'dark' ? 'light' : 'dark'
@@ -15,13 +18,21 @@ export default function Header() {
   }
 
   return (
-    <header className="w-full border-b border-white dark:border-neutral-800 dark:bg-black bg-white shadow-md shadow-gray-300/50 dark:shadow-none h-16 flex fixed z-50 items-center justify-between px-10">
+    <header className="w-full border-b border-white dark:border-zinc-700 dark:bg-zinc-900 bg-white shadow-md shadow-gray-300/50 dark:shadow-none h-16 flex fixed z-50 items-center justify-between px-10">
       <a href="/" className="h-8 relative">
         <img className="h-full" src={logo}></img>
       </a>
       <div className="flex gap-2">
-        <Button2 onClick={handleToggleTheme} icon={faCircleHalfStroke} content="Theme"></Button2>
-        <Button2 link="/" icon={faHouse} content="Accueil"></Button2>
+        <Button2
+          onClick={handleToggleTheme}
+          icon={faCircleHalfStroke}
+          content={traduction[selectedLanguage]['Thème']}
+        ></Button2>
+        <Button2
+          link="/"
+          icon={faHouse}
+          content={traduction[selectedLanguage]['Accueil']}
+        ></Button2>
         <LanguageChange></LanguageChange>
       </div>
     </header>

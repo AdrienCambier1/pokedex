@@ -12,6 +12,7 @@ export default function Type({ value }) {
   }
 
   const typeColor = types[value].backgroundColor
+
   const shadowColor = hexToRgba(typeColor, 0.5)
   const typeTraducted = types[value].translations[selectedLanguage]
 
