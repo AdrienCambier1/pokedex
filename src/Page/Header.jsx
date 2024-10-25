@@ -1,13 +1,13 @@
 import logo from '../Images/logo.png'
+import traduction from '../Data/traduction.json'
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { faCircleHalfStroke } from '@fortawesome/free-solid-svg-icons'
-import LanguageChange from '../Components/LanguageChange.js'
-import Button2 from '../Components/Button2.js'
+import LanguageChange from '../Components/LanguageChange'
 import { useContext } from 'react'
-import { ThemeContext } from '../Contexts/ThemeContext.js'
-import { LanguageContext } from '../Contexts/LanguageContext.js'
-import traduction from '../Data/traduction.json'
+import { ThemeContext } from '../Contexts/ThemeContext'
+import { LanguageContext } from '../Contexts/LanguageContext'
 import { Link } from 'react-router-dom'
+import { LightButton } from '../Components/Buttons'
 
 export default function Header() {
   const { Theme, setTheme } = useContext(ThemeContext)
@@ -24,17 +24,13 @@ export default function Header() {
         <img className="h-full" src={logo}></img>
       </Link>
       <div className="flex gap-2">
-        <Button2
+        <LightButton
           onClick={handleToggleTheme}
           icon={faCircleHalfStroke}
           content={traduction[selectedLanguage]['Thème']}
-        ></Button2>
-        <Button2
-          link="/"
-          icon={faHouse}
-          content={traduction[selectedLanguage]['Accueil']}
-        ></Button2>
-        <LanguageChange></LanguageChange>
+        />
+        <LightButton link="/" icon={faHouse} content={traduction[selectedLanguage]['Accueil']} />
+        <LanguageChange />
       </div>
     </header>
   )

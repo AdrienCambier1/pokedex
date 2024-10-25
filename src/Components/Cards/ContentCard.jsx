@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-export default function Card1({ link, children }) {
+export default function ContentCard({ link, children }) {
   return link ? (
     <Link
       to={link}

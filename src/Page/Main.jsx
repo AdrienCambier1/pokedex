@@ -1,7 +1,5 @@
-import Home from './Routes/Home'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import NotFound from './Routes/NotFound'
-import Pokemon from './Routes/Pokemon'
+import { Home, NotFound, Pokemon } from './Routes'
 
 export default function Main() {
   return (

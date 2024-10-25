@@ -1,36 +1,17 @@
+import PokemonData from '../../Data/pokemons.json'
+import traduction from '../../Data/traduction.json'
 import { useContext } from 'react'
 import { LanguageContext } from '../../Contexts/LanguageContext'
-import Type from '../../Components/Type'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { faExplosion } from '@fortawesome/free-solid-svg-icons'
 import { faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons'
 import { faWeightHanging } from '@fortawesome/free-solid-svg-icons'
-import Highlight from '../../Components/Highlight'
-import Button1 from '../../Components/Button1'
-import MainTitle from '../../Components/MainTitle'
-import Card1 from '../../Components/Card1'
-import Card2 from '../../Components/Card2'
-import Tag1 from '../../Components/Tag1'
-import Tag2 from '../../Components/Tag2'
-import TitleSection from '../../Components/TitleSection'
-import traduction from '../../Data/traduction.json'
-import Poison from '../../Images/BackgroundType/poison.jpg'
-import Grass from '../../Images/BackgroundType/plante.jpeg'
-import Fire from '../../Images/BackgroundType/feu.jpg'
-import Flying from '../../Images/BackgroundType/vol.jpeg'
-import Water from '../../Images/BackgroundType/eau.jpg'
-import Bug from '../../Images/BackgroundType/insecte.jpg'
-import Normal from '../../Images/BackgroundType/normal.jpg'
-import Electric from '../../Images/BackgroundType/electrick.jpg'
-import Ground from '../../Images/BackgroundType/sol.webp'
-import Fairy from '../../Images/BackgroundType/fée.png'
-import Fighting from '../../Images/BackgroundType/combat.png'
-import Psychic from '../../Images/BackgroundType/psy.png'
-import Rock from '../../Images/BackgroundType/roche.jpg'
-import Ice from '../../Images/BackgroundType/glace.jpg'
-import Dragon from '../../Images/BackgroundType/dragon.jpg'
 import { useParams } from 'react-router-dom'
-import PokemonData from '../../Data/pokemons.json'
+import * as BackgroundImages from '../../Images/BackgroundType'
+import { HeavyButton } from '../../Components/Buttons'
+import { ContentCard, ImageCard } from '../../Components/Cards'
+import { MainTitle, TitleSection } from '../../Components/Titles'
+import { LightBlueTag, RawTag, Highlight, Type } from '../../Components/Tags'
 
 export default function Pokemon() {
   const { pokemonId } = useParams()
@@ -38,21 +19,21 @@ export default function Pokemon() {
   const formattedId = PokemonData[pokemonId].id.toString().padStart(3, '0')
 
   const typeImages = {
-    poison: Poison,
-    grass: Grass,
-    fire: Fire,
-    flying: Flying,
-    water: Water,
-    bug: Bug,
-    normal: Normal,
-    electric: Electric,
-    ground: Ground,
-    fairy: Fairy,
-    fighting: Fighting,
-    psychic: Psychic,
-    rock: Rock,
-    ice: Ice,
-    dragon: Dragon,
+    poison: BackgroundImages.poison,
+    grass: BackgroundImages.plante,
+    fire: BackgroundImages.feu,
+    flying: BackgroundImages.vol,
+    water: BackgroundImages.eau,
+    bug: BackgroundImages.insecte,
+    normal: BackgroundImages.normal,
+    electric: BackgroundImages.electrick,
+    ground: BackgroundImages.sol,
+    fairy: BackgroundImages.fée,
+    fighting: BackgroundImages.combat,
+    psychic: BackgroundImages.psy,
+    rock: BackgroundImages.roche,
+    ice: BackgroundImages.glace,
+    dragon: BackgroundImages.dragon,
   }
 
   const typeImage = PokemonData[pokemonId].types
@@ -64,42 +45,42 @@ export default function Pokemon() {
   return (
     <>
       <div className="relative w-full flex flex-col items-center">
-        <MainTitle value={PokemonData[pokemonId].names[selectedLanguage]}></MainTitle>
+        <MainTitle value={PokemonData[pokemonId].names[selectedLanguage]} />
 
         <div className="max-w-screen-md mt-10">
-          <Card1>
-            <TitleSection value={traduction[selectedLanguage]['Statistiques']}></TitleSection>
+          <ContentCard>
+            <TitleSection value={traduction[selectedLanguage]['Statistiques']} />
 
             <div className="flex gap-4 relative flex-col md:flex-row">
               <div className="w-full md:w-52 relative">
-                <Card2 image={typeImage}>
-                  <Highlight value={formattedId}></Highlight>
+                <ImageCard image={typeImage}>
+                  <Highlight value={formattedId} />
                   <img src={PokemonData[pokemonId].image} />
-                </Card2>
+                </ImageCard>
               </div>
               <div className="flex flex-col gap-3 justify-between">
                 <div className="flex flex-col gap-3">
                   <div className="gap-3 flex">
                     {PokemonData[pokemonId].types.map((element) => (
-                      <Type key={element} value={element}></Type>
+                      <Type key={element} value={element} />
                     ))}
                   </div>
                   <div className="flex gap-3">
-                    <Tag1
+                    <LightBlueTag
                       icon={faUpRightAndDownLeftFromCenter}
                       value={`${traduction[selectedLanguage]['Compétences']} | ${PokemonData[pokemonId].height}`}
-                    ></Tag1>
-                    <Tag1
+                    />
+                    <LightBlueTag
                       icon={faWeightHanging}
                       value={`${traduction[selectedLanguage]['Poids']} | ${PokemonData[pokemonId].weight}`}
-                    ></Tag1>
+                    />
                   </div>
                 </div>
-                <Button1
+                <HeavyButton
                   link="/"
                   content={traduction[selectedLanguage]['Retour à la recherche']}
                   icon={faArrowLeft}
-                ></Button1>
+                />
               </div>
             </div>
 
@@ -108,11 +89,11 @@ export default function Pokemon() {
 
               <div className="relative gap-3 flex flex-wrap w-full">
                 {PokemonData[pokemonId].moves.map((element) => (
-                  <Tag2 key={element} value={element} icon={faExplosion}></Tag2>
+                  <RawTag key={element} value={element} icon={faExplosion} />
                 ))}
               </div>
             </div>
-          </Card1>
+          </ContentCard>
         </div>
       </div>
     </>

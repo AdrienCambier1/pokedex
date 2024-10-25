@@ -1,9 +1,9 @@
 import './Style/index.css'
-import Header from './Page/Header.js'
-import Main from './Page/Main.js'
-import { LanguageProvider, LanguageContext } from './Contexts/LanguageContext.js'
-import { SearchProvider } from './Contexts/SearchContext.js'
-import { ThemeProvider } from './Contexts/ThemeContext.js'
+import Header from './Page/Header'
+import Main from './Page/Main'
+import { LanguageProvider, LanguageContext } from './Contexts/LanguageContext'
+import { SearchProvider } from './Contexts/SearchContext'
+import { ThemeProvider } from './Contexts/ThemeContext'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 function App() {

@@ -1,12 +1,12 @@
-import Searchbar from '../../Components/Searchbar'
 import PokemonContainer from '../../Components/PokemonContainer'
-import '../../Style/index.css'
-import MainTitle from '../../Components/MainTitle'
 import traduction from '../../Data/traduction.json'
 import Types from '../../Data/types.json'
 import { LanguageContext } from '../../Contexts/LanguageContext'
 import { useContext, useState } from 'react'
-import TypeFilterButton from '../../Components/TypeFilterButton'
+import { SearchBar } from '../../Components/Inputs'
+import { MainTitle } from '../../Components/Titles'
+import { TypeFilterButton } from '../../Components/Buttons'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   const { selectedLanguage } = useContext(LanguageContext)
@@ -26,9 +26,10 @@ export default function Home() {
   return (
     <>
       <div className="relative w-full flex flex-col items-center">
-        <MainTitle value={traduction[selectedLanguage]["Retrouvez n'importe quel pokemon"]} />
-
-        <Searchbar placeholder={traduction[selectedLanguage]['Effectuez une recherche']} />
+        <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0&t=2s">
+          <MainTitle value={traduction[selectedLanguage]["Retrouvez n'importe quel pokemon"]} />
+        </a>
+        <SearchBar placeholder={traduction[selectedLanguage]['Effectuez une recherche']} />
 
         <div className="flex gap-2 mt-8 flex-wrap justify-center max-w-3xl">
           {Object.keys(Types).map((type) => (

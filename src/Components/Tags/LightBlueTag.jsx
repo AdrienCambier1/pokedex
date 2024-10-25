@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default function Tag1({ icon, value }) {
+export default function LightBlueTag({ icon, value }) {
   return (
     <div
       style={{ boxShadow: '0 0 10px 2px rgba(56, 189, 248, 0.5)' }}

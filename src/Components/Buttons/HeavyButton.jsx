@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'react-router-dom'
 
-export default function Button1({ link, onClick, icon, content }) {
+export default function HeavyButton({ link, onClick, icon, content }) {
   return (
     <Link
       to={link}

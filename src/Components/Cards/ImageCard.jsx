@@ -1,8 +1,6 @@
 import React from 'react'
 
-export default function Card2({ children, image }) {
-  const hasImage = React.Children.toArray(children).some((child) => child.type === 'img')
-
+export default function ImageCard({ children, image }) {
   return (
     <div
       style={{

@@ -1,9 +1,9 @@
 import { useContext } from 'react'
-import { SearchContext } from '../Contexts/SearchContext'
+import { SearchContext } from '../../Contexts/SearchContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
-export default function Searchbar({ placeholder }) {
+export default function SearchBar({ placeholder }) {
   const { searchTerm, setSearchTerm } = useContext(SearchContext)
 
   const handleChange = (event) => {
