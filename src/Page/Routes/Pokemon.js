@@ -29,10 +29,13 @@ import Psychic from '../../Images/BackgroundType/psy.png'
 import Rock from '../../Images/BackgroundType/roche.jpg'
 import Ice from '../../Images/BackgroundType/glace.jpg'
 import Dragon from '../../Images/BackgroundType/dragon.jpg'
+import { useParams } from 'react-router-dom'
+import PokemonData from '../../Data/pokemons.json'
 
-export default function Pokemon({ data }) {
+export default function Pokemon() {
+  const { pokemonId } = useParams()
   const { selectedLanguage } = useContext(LanguageContext)
-  const formattedId = data.id.toString().padStart(3, '0')
+  const formattedId = PokemonData[pokemonId].id.toString().padStart(3, '0')
 
   const typeImages = {
     poison: Poison,
@@ -52,7 +55,7 @@ export default function Pokemon({ data }) {
     dragon: Dragon,
   }
 
-  const typeImage = data.types
+  const typeImage = PokemonData[pokemonId].types
     .map((type) => {
       return typeImages[type]
     })
@@ -61,7 +64,7 @@ export default function Pokemon({ data }) {
   return (
     <>
       <div className="relative w-full flex flex-col items-center">
-        <MainTitle value={data.names[selectedLanguage]}></MainTitle>
+        <MainTitle value={PokemonData[pokemonId].names[selectedLanguage]}></MainTitle>
 
         <div className="max-w-screen-md mt-10">
           <Card1>
@@ -71,24 +74,24 @@ export default function Pokemon({ data }) {
               <div className="w-full md:w-52 relative">
                 <Card2 image={typeImage}>
                   <Highlight value={formattedId}></Highlight>
-                  <img src={data.image} />
+                  <img src={PokemonData[pokemonId].image} />
                 </Card2>
               </div>
               <div className="flex flex-col gap-3 justify-between">
                 <div className="flex flex-col gap-3">
                   <div className="gap-3 flex">
-                    {data.types.map((element) => (
+                    {PokemonData[pokemonId].types.map((element) => (
                       <Type key={element} value={element}></Type>
                     ))}
                   </div>
                   <div className="flex gap-3">
                     <Tag1
                       icon={faUpRightAndDownLeftFromCenter}
-                      value={`${traduction[selectedLanguage]['Compétences']} | ${data.height}`}
+                      value={`${traduction[selectedLanguage]['Compétences']} | ${PokemonData[pokemonId].height}`}
                     ></Tag1>
                     <Tag1
                       icon={faWeightHanging}
-                      value={`${traduction[selectedLanguage]['Poids']} | ${data.weight}`}
+                      value={`${traduction[selectedLanguage]['Poids']} | ${PokemonData[pokemonId].weight}`}
                     ></Tag1>
                   </div>
                 </div>
@@ -104,7 +107,7 @@ export default function Pokemon({ data }) {
               <TitleSection value={traduction[selectedLanguage]['Compétences']}></TitleSection>
 
               <div className="relative gap-3 flex flex-wrap w-full">
-                {data.moves.map((element) => (
+                {PokemonData[pokemonId].moves.map((element) => (
                   <Tag2 key={element} value={element} icon={faExplosion}></Tag2>
                 ))}
               </div>

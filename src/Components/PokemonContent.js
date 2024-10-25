@@ -47,7 +47,7 @@ export default function PokemonContent({ name, img, types, id }) {
     .filter((element) => element !== undefined)[0]
 
   return (
-    <Card1 link={'pokemon_' + id}>
+    <Card1 link={'pokemon/' + id}>
       <Card2 image={typeImage}>
         <Highlight value={`No. ${formattedId}`}></Highlight>
         <img src={img} />
