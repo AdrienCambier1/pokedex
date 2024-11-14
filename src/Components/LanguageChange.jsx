@@ -1,26 +1,24 @@
-import types from '../Data/types.json'
 import { useState, useContext, useRef, useEffect } from 'react'
-import { LanguageContext } from '../Contexts/LanguageContext'
+import { LanguageContext } from '../Contexts'
 import { faFlag } from '@fortawesome/free-solid-svg-icons'
-import NavContainer from './NavContainer'
-import NavContent from './NavContent'
+import { NavContainer, NavContent } from '../Components'
 import { HeavyButton } from './Buttons'
+import traductions from '../Data/traduction.json'
 
 export default function LanguageChange() {
-  const languages = types.normal.translations
   const { selectedLanguage, setSelectedLanguage } = useContext(LanguageContext)
-  const [isLanguageSelectorVisible, setIsLanguageSelectorVisible] = useState(false)
+  const [isSelectorVisible, setIsSelectorVisible] = useState(false)
   const menuRef = useRef(null)
 
   const handleLanguageChange = (langue) => {
     setSelectedLanguage(langue)
-    setIsLanguageSelectorVisible(false)
+    setIsSelectorVisible(false)
   }
 
   useEffect(() => {
-    function handleClickOutside(event) {
+    const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsLanguageSelectorVisible(false)
+        setIsSelectorVisible(false)
       }
     }
 
@@ -34,13 +32,13 @@ export default function LanguageChange() {
   return (
     <div className="relative" ref={menuRef}>
       <HeavyButton
-        onClick={() => setIsLanguageSelectorVisible(!isLanguageSelectorVisible)}
+        onClick={() => setIsSelectorVisible((prev) => !prev)}
         icon={faFlag}
         content={selectedLanguage}
       />
-      {isLanguageSelectorVisible && (
+      {isSelectorVisible && (
         <NavContainer>
-          {Object.keys(languages).map((langue) => (
+          {Object.keys(traductions).map((langue) => (
             <NavContent key={langue} data={langue} onClick={() => handleLanguageChange(langue)} />
           ))}
         </NavContainer>

@@ -33,14 +33,14 @@ export default function PokemonCard({ name, img, types, id }) {
   return (
     <ContentCard link={'pokemon/' + id}>
       <ImageCard image={typeImage}>
-        <Highlight value={`No. ${formattedId}`}></Highlight>
+        <Highlight value={`No. ${formattedId}`} />
         <img src={img} />
       </ImageCard>
       <div>
         <p className="dark:text-white text-black text-xl mt-5 font-['Afacad]">{name}</p>
         <div className="flex flex-wrap gap-3 mt-5">
           {types.map((element) => (
-            <Type key={element} value={element}></Type>
+            <Type key={element} value={element} />
           ))}
         </div>
       </div>

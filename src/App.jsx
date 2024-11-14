@@ -1,22 +1,32 @@
 import './Style/index.css'
-import Header from './Page/Header'
-import Main from './Page/Main'
-import { LanguageProvider } from './Contexts/LanguageContext'
-import { SearchProvider } from './Contexts/SearchContext'
-import { ThemeProvider } from './Contexts/ThemeContext'
+import { Header, Main } from './Page'
+import {
+  LanguageProvider,
+  SearchProvider,
+  ThemeProvider,
+  TypesProvider,
+  DataProvider,
+  LoadingProvider,
+} from './Contexts'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 function App() {
   return (
     <Router>
-      <ThemeProvider>
-        <LanguageProvider>
-          <Header></Header>
-          <SearchProvider>
-            <Main></Main>
-          </SearchProvider>
-        </LanguageProvider>
-      </ThemeProvider>
+      <LoadingProvider>
+        <DataProvider>
+          <TypesProvider>
+            <ThemeProvider>
+              <LanguageProvider>
+                <Header></Header>
+                <SearchProvider>
+                  <Main></Main>
+                </SearchProvider>
+              </LanguageProvider>
+            </ThemeProvider>
+          </TypesProvider>
+        </DataProvider>
+      </LoadingProvider>
     </Router>
   )
 }

@@ -8,7 +8,10 @@
     "Statistiques": "통계",
     "Compétences": "기술",
     "Retrouvez n'importe quel pokemon": "어떤 포켓몬도 찾아보세요",
-    "Effectuez une recherche": "검색하세요"
+    "Effectuez une recherche": "검색하세요",
+    "Retour": "돌아가기",
+    "Page introuvable": "페이지를 찾을 수 없습니다",
+    "Aucun résultat": "결과 없음"
   },
   "ja": {
     "Thème": "テーマ",
@@ -19,7 +22,10 @@
     "Statistiques": "統計",
     "Compétences": "技",
     "Retrouvez n'importe quel pokemon": "どのポケモンも見つけましょう",
-    "Effectuez une recherche": "検索を行う"
+    "Effectuez une recherche": "検索を行う",
+    "Retour": "戻る",
+    "Page introuvable": "ページが見つかりません",
+    "Aucun résultat": "結果がありません"
   },
   "fr": {
     "Thème": "Thème",
@@ -30,7 +36,10 @@
     "Statistiques": "Statistiques",
     "Compétences": "Compétences",
     "Retrouvez n'importe quel pokemon": "Retrouvez n'importe quel Pokémon",
-    "Effectuez une recherche": "Effectuez une recherche"
+    "Effectuez une recherche": "Effectuez une recherche",
+    "Retour": "Retour",
+    "Page introuvable": "Page introuvable",
+    "Aucun résultat": "Aucun résultat"
   },
   "de": {
     "Thème": "Thema",
@@ -41,7 +50,10 @@
     "Statistiques": "Statistiken",
     "Compétences": "Fähigkeiten",
     "Retrouvez n'importe quel pokemon": "Finde jeden beliebigen Pokémon",
-    "Effectuez une recherche": "Eine Suche durchführen"
+    "Effectuez une recherche": "Eine Suche durchführen",
+    "Retour": "Zurück",
+    "Page introuvable": "Seite nicht gefunden",
+    "Aucun résultat": "Keine Ergebnisse"
   },
   "es": {
     "Thème": "Tema",
@@ -52,7 +64,10 @@
     "Statistiques": "Estadísticas",
     "Compétences": "Habilidades",
     "Retrouvez n'importe quel pokemon": "Encuentra cualquier Pokémon",
-    "Effectuez une recherche": "Realiza una búsqueda"
+    "Effectuez une recherche": "Realiza una búsqueda",
+    "Retour": "Volver",
+    "Page introuvable": "Página no encontrada",
+    "Aucun résultat": "Sin resultados"
   },
   "it": {
     "Thème": "Tema",
@@ -63,7 +78,10 @@
     "Statistiques": "Statistiche",
     "Compétences": "Abilità",
     "Retrouvez n'importe quel pokemon": "Trova qualsiasi Pokémon",
-    "Effectuez une recherche": "Effettua una ricerca"
+    "Effectuez une recherche": "Effettua una ricerca",
+    "Retour": "Indietro",
+    "Page introuvable": "Pagina non trovata",
+    "Aucun résultat": "Nessun risultato"
   },
   "en": {
     "Thème": "Theme",
@@ -74,6 +92,9 @@
     "Statistiques": "Statistics",
     "Compétences": "Skills",
     "Retrouvez n'importe quel pokemon": "Find any Pokémon",
-    "Effectuez une recherche": "Perform a search"
+    "Effectuez une recherche": "Perform a search",
+    "Retour": "Back",
+    "Page introuvable": "Page not found",
+    "Aucun résultat": "No results"
   }
 }
