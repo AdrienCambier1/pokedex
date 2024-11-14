@@ -11,7 +11,8 @@
     "Effectuez une recherche": "검색하세요",
     "Retour": "돌아가기",
     "Page introuvable": "페이지를 찾을 수 없습니다",
-    "Aucun résultat": "결과 없음"
+    "Aucun résultat": "결과 없음",
+    "Menu": "메뉴"
   },
   "ja": {
     "Thème": "テーマ",
@@ -25,7 +26,8 @@
     "Effectuez une recherche": "検索を行う",
     "Retour": "戻る",
     "Page introuvable": "ページが見つかりません",
-    "Aucun résultat": "結果がありません"
+    "Aucun résultat": "結果がありません",
+    "Menu": "メニュー"
   },
   "fr": {
     "Thème": "Thème",
@@ -39,7 +41,8 @@
     "Effectuez une recherche": "Effectuez une recherche",
     "Retour": "Retour",
     "Page introuvable": "Page introuvable",
-    "Aucun résultat": "Aucun résultat"
+    "Aucun résultat": "Aucun résultat",
+    "Menu": "Menu"
   },
   "de": {
     "Thème": "Thema",
@@ -53,7 +56,8 @@
     "Effectuez une recherche": "Eine Suche durchführen",
     "Retour": "Zurück",
     "Page introuvable": "Seite nicht gefunden",
-    "Aucun résultat": "Keine Ergebnisse"
+    "Aucun résultat": "Keine Ergebnisse",
+    "Menu": "Menü"
   },
   "es": {
     "Thème": "Tema",
@@ -67,7 +71,8 @@
     "Effectuez une recherche": "Realiza una búsqueda",
     "Retour": "Volver",
     "Page introuvable": "Página no encontrada",
-    "Aucun résultat": "Sin resultados"
+    "Aucun résultat": "Sin resultados",
+    "Menu": "Menú"
   },
   "it": {
     "Thème": "Tema",
@@ -81,7 +86,8 @@
     "Effectuez une recherche": "Effettua una ricerca",
     "Retour": "Indietro",
     "Page introuvable": "Pagina non trovata",
-    "Aucun résultat": "Nessun risultato"
+    "Aucun résultat": "Nessun risultato",
+    "Menu": "Menu"
   },
   "en": {
     "Thème": "Theme",
@@ -95,6 +101,7 @@
     "Effectuez une recherche": "Perform a search",
     "Retour": "Back",
     "Page introuvable": "Page not found",
-    "Aucun résultat": "No results"
+    "Aucun résultat": "No results",
+    "Menu": "Menu"
   }
 }

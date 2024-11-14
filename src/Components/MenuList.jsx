@@ -1,9 +1,9 @@
 import { NavContainer, NavContent } from '../Components'
-import { HamburgerButton } from './Buttons'
+import { HeavyButton } from './Buttons'
 import traduction from '../Data/traduction.json'
 import { ThemeContext, LanguageContext } from '../Contexts'
 import { useContext, useState, useRef, useEffect } from 'react'
-import { faCircleHalfStroke, faHouse } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faCircleHalfStroke, faHouse } from '@fortawesome/free-solid-svg-icons'
 
 export default function MenuList() {
   const { Theme, setTheme } = useContext(ThemeContext)
@@ -37,7 +37,11 @@ export default function MenuList() {
 
   return (
     <div className="relative block sm:hidden" ref={menuRef}>
-      <HamburgerButton onClick={() => setIsSelectorVisible((prev) => !prev)} />
+      <HeavyButton
+        content={traduction[selectedLanguage]['Menu']}
+        icon={faBars}
+        onClick={() => setIsSelectorVisible((prev) => !prev)}
+      />
 
       {isSelectorVisible && (
         <NavContainer>
