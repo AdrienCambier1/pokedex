@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { Home, NotFound, Pokemon } from './Routes'
 
 export default function Main() {

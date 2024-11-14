@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import traduction from '../../Data/traduction.json'
 import { LanguageContext } from '../../Contexts/LanguageContext'
@@ -14,39 +14,12 @@ import {
   faWeightHanging,
 } from '@fortawesome/free-solid-svg-icons'
 import NotFound from '../Routes/NotFound'
+import PokemonData from '../../Data/pokemons.json'
 
 export default function Pokemon() {
   const { pokemonId } = useParams()
   const { selectedLanguage } = useContext(LanguageContext)
-  const [pokemonData, setPokemonData] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    const fetchPokemonData = async () => {
-      try {
-        const response = await fetch('https://pokedex-jgabriele.vercel.app/pokemons.json')
-        if (!response.ok) {
-          throw new Error('Erreur lors du chargement des données Pokémon')
-        }
-        const data = await response.json()
-        setPokemonData(data)
-      } finally {
-        setIsLoading(false)
-      }
-    }
-
-    fetchPokemonData()
-  }, [])
-
-  if (isLoading) {
-    return (
-      <div className="w-full flex justify-center">
-        <div className="loader"></div>
-      </div>
-    )
-  }
-
-  const pokemon = pokemonData.find((p) => p.id === parseInt(pokemonId, 10))
+  const pokemon = PokemonData.find((p) => p.id === parseInt(pokemonId, 10))
 
   if (!pokemon) {
     return <NotFound />
@@ -101,7 +74,7 @@ export default function Pokemon() {
                 <div className="flex gap-3">
                   <LightBlueTag
                     icon={faUpRightAndDownLeftFromCenter}
-                    value={`${traduction[selectedLanguage]['Taille']} | ${pokemon.height}`}
+                    value={`${traduction[selectedLanguage]['Hauteur']} | ${pokemon.height}`}
                   />
                   <LightBlueTag
                     icon={faWeightHanging}

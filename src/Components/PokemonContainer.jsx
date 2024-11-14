@@ -1,32 +1,14 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { PokemonCard } from './Cards'
 import { LanguageContext } from '../Contexts/LanguageContext'
 import { SearchContext } from '../Contexts/SearchContext'
+import PokemonData from '../Data/pokemons.json'
 
 export default function PokemonContainer({ selectedTypes }) {
   const { selectedLanguage } = useContext(LanguageContext)
   const { searchTerm } = useContext(SearchContext)
-  const [pokemonData, setPokemonData] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(() => {
-    const fetchPokemonData = async () => {
-      try {
-        const response = await fetch('https://pokedex-jgabriele.vercel.app/pokemons.json')
-        if (!response.ok) {
-          throw new Error('Erreur lors du chargement des données Pokémon')
-        }
-        const data = await response.json()
-        setPokemonData(data)
-      } finally {
-        setIsLoading(false)
-      }
-    }
-
-    fetchPokemonData()
-  }, [])
-
-  const filteredPokemon = pokemonData.filter(({ names, types }) => {
+  const filteredPokemon = PokemonData.filter(({ names, types }) => {
     const matchesSearchTerm = names[selectedLanguage]
       .toLowerCase()
       .includes(searchTerm.toLowerCase())
@@ -37,14 +19,6 @@ export default function PokemonContainer({ selectedTypes }) {
 
     return matchesSearchTerm && matchesType
   })
-
-  if (isLoading) {
-    return (
-      <div className="w-full flex justify-center">
-        <div className="loader"></div>
-      </div>
-    )
-  }
 
   if (filteredPokemon.length === 0) {
     return (

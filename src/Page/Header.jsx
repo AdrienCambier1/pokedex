@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <header className="w-full border-b border-white dark:border-zinc-700 dark:bg-zinc-900 bg-white shadow-md shadow-gray-300/50 dark:shadow-none h-16 flex fixed z-50 items-center justify-between px-10">
       <Link to="/" className="h-8 relative">
-        <img className="h-full" src={logo}></img>
+        <img className="h-full" src={logo} alt={logo}></img>
       </Link>
       <div className="flex gap-2">
         <LightButton
