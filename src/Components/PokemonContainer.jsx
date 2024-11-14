@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { PokemonCard } from './Cards'
 import { LanguageContext, DataContext, SearchContext, LoadingContext } from '../Contexts'
-import traductions from '../Data/traduction.json'
+import traduction from '../Data/traduction.json'
 
 export default function PokemonContainer({ selectedTypes }) {
   const { data } = useContext(DataContext)
@@ -31,7 +31,7 @@ export default function PokemonContainer({ selectedTypes }) {
     return (
       <div className="w-full flex justify-center">
         <p className="font-bold font-['Afacad'] text-neutral-500 text-2xl w-fit relative">
-          {traductions[selectedLanguage]['Aucun résultat']}
+          {traduction[selectedLanguage]['Aucun résultat']}
         </p>
       </div>
     )

@@ -3,7 +3,7 @@ import { LanguageContext } from '../Contexts'
 import { faFlag } from '@fortawesome/free-solid-svg-icons'
 import { NavContainer, NavContent } from '../Components'
 import { HeavyButton } from './Buttons'
-import traductions from '../Data/traduction.json'
+import traduction from '../Data/traduction.json'
 
 export default function LanguageChange() {
   const { selectedLanguage, setSelectedLanguage } = useContext(LanguageContext)
@@ -38,7 +38,7 @@ export default function LanguageChange() {
       />
       {isSelectorVisible && (
         <NavContainer>
-          {Object.keys(traductions).map((langue) => (
+          {Object.keys(traduction).map((langue) => (
             <NavContent key={langue} data={langue} onClick={() => handleLanguageChange(langue)} />
           ))}
         </NavContainer>

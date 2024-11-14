@@ -28,7 +28,7 @@ export default function Home() {
     return (
       <>
         <div className="relative w-full flex flex-col items-center">
-          <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0&t=2s">
+          <a href="/rickroll">
             <MainTitle value={traduction[selectedLanguage]["Retrouvez n'importe quel pokemon"]} />
           </a>
           <SearchBar placeholder={traduction[selectedLanguage]['Effectuez une recherche']} />

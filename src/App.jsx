@@ -9,10 +9,12 @@ import {
   LoadingProvider,
 } from './Contexts'
 import { BrowserRouter as Router } from 'react-router-dom'
+import { ScrollToTop } from './Functions'
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <LoadingProvider>
         <DataProvider>
           <TypesProvider>

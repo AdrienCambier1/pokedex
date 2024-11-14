@@ -2,10 +2,9 @@ import logo from '../Images/logo.png'
 import traduction from '../Data/traduction.json'
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { faCircleHalfStroke } from '@fortawesome/free-solid-svg-icons'
-import LanguageChange from '../Components/LanguageChange'
+import { LanguageChange, MenuList } from '../Components'
 import { useContext } from 'react'
-import { ThemeContext } from '../Contexts/ThemeContext'
-import { LanguageContext } from '../Contexts/LanguageContext'
+import { LanguageContext, ThemeContext } from '../Contexts'
 import { Link } from 'react-router-dom'
 import { LightButton } from '../Components/Buttons'
 
@@ -24,13 +23,16 @@ export default function Header() {
         <img className="h-full" src={logo} alt={logo}></img>
       </Link>
       <div className="flex gap-2">
-        <LightButton
-          onClick={handleToggleTheme}
-          icon={faCircleHalfStroke}
-          content={traduction[selectedLanguage]['Thème']}
-        />
-        <LightButton link="/" icon={faHouse} content={traduction[selectedLanguage]['Accueil']} />
+        <div className="hidden gap-2 sm:flex">
+          <LightButton
+            onClick={handleToggleTheme}
+            icon={faCircleHalfStroke}
+            content={traduction[selectedLanguage]['Thème']}
+          />
+          <LightButton link="/" icon={faHouse} content={traduction[selectedLanguage]['Accueil']} />
+        </div>
         <LanguageChange />
+        <MenuList />
       </div>
     </header>
   )
