@@ -1,22 +1,56 @@
-import PokemonData from '../../Data/pokemons.json'
-import traduction from '../../Data/traduction.json'
-import { useContext } from 'react'
-import { LanguageContext } from '../../Contexts/LanguageContext'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-import { faExplosion } from '@fortawesome/free-solid-svg-icons'
-import { faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons'
-import { faWeightHanging } from '@fortawesome/free-solid-svg-icons'
+import React, { useContext, useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import traduction from '../../Data/traduction.json'
+import { LanguageContext } from '../../Contexts/LanguageContext'
 import * as BackgroundImages from '../../Images/BackgroundType'
 import { HeavyButton } from '../../Components/Buttons'
 import { ContentCard, ImageCard } from '../../Components/Cards'
 import { MainTitle, TitleSection } from '../../Components/Titles'
 import { LightBlueTag, RawTag, Highlight, Type } from '../../Components/Tags'
+import {
+  faArrowLeft,
+  faExplosion,
+  faUpRightAndDownLeftFromCenter,
+  faWeightHanging,
+} from '@fortawesome/free-solid-svg-icons'
+import NotFound from '../Routes/NotFound'
 
 export default function Pokemon() {
   const { pokemonId } = useParams()
   const { selectedLanguage } = useContext(LanguageContext)
-  const formattedId = PokemonData[pokemonId].id.toString().padStart(3, '0')
+  const [pokemonData, setPokemonData] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchPokemonData = async () => {
+      try {
+        const response = await fetch('https://pokedex-jgabriele.vercel.app/pokemons.json')
+        if (!response.ok) {
+          throw new Error('Erreur lors du chargement des données Pokémon')
+        }
+        const data = await response.json()
+        setPokemonData(data)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    fetchPokemonData()
+  }, [])
+
+  if (isLoading) {
+    return (
+      <div className="w-full flex justify-center">
+        <div className="loader"></div>
+      </div>
+    )
+  }
+
+  const pokemon = pokemonData.find((p) => p.id === parseInt(pokemonId, 10))
+
+  if (!pokemon) {
+    return <NotFound />
+  }
 
   const typeImages = {
     poison: BackgroundImages.poison,
@@ -36,66 +70,63 @@ export default function Pokemon() {
     dragon: BackgroundImages.dragon,
   }
 
-  const typeImage = PokemonData[pokemonId].types
-    .map((type) => {
-      return typeImages[type]
-    })
-    .filter((element) => element !== undefined)[0]
+  const typeImage = pokemon.types
+    .map((type) => typeImages[type])
+    .find((image) => image !== undefined)
+
+  const formattedId = pokemon.id.toString().padStart(3, '0')
 
   return (
-    <>
-      <div className="relative w-full flex flex-col items-center">
-        <MainTitle value={PokemonData[pokemonId].names[selectedLanguage]} />
+    <div className="relative w-full flex flex-col items-center">
+      <MainTitle value={pokemon.names[selectedLanguage]} />
 
-        <div className="max-w-screen-md mt-10">
-          <ContentCard>
-            <TitleSection value={traduction[selectedLanguage]['Statistiques']} />
+      <div className="max-w-screen-md mt-10">
+        <ContentCard>
+          <TitleSection value={traduction[selectedLanguage]['Statistiques']} />
 
-            <div className="flex gap-4 relative flex-col md:flex-row">
-              <div className="w-full md:w-52 relative">
-                <ImageCard image={typeImage}>
-                  <Highlight value={formattedId} />
-                  <img src={PokemonData[pokemonId].image} />
-                </ImageCard>
-              </div>
-              <div className="flex flex-col gap-3 justify-between">
-                <div className="flex flex-col gap-3">
-                  <div className="gap-3 flex">
-                    {PokemonData[pokemonId].types.map((element) => (
-                      <Type key={element} value={element} />
-                    ))}
-                  </div>
-                  <div className="flex gap-3">
-                    <LightBlueTag
-                      icon={faUpRightAndDownLeftFromCenter}
-                      value={`${traduction[selectedLanguage]['Compétences']} | ${PokemonData[pokemonId].height}`}
-                    />
-                    <LightBlueTag
-                      icon={faWeightHanging}
-                      value={`${traduction[selectedLanguage]['Poids']} | ${PokemonData[pokemonId].weight}`}
-                    />
-                  </div>
+          <div className="flex gap-4 relative flex-col md:flex-row">
+            <div className="w-full md:w-52 relative">
+              <ImageCard image={typeImage}>
+                <Highlight value={formattedId} />
+                <img src={pokemon.image} alt={pokemon.names[selectedLanguage]} />
+              </ImageCard>
+            </div>
+            <div className="flex flex-col gap-3 justify-between">
+              <div className="flex flex-col gap-3">
+                <div className="gap-3 flex">
+                  {pokemon.types.map((type) => (
+                    <Type key={type} value={type} />
+                  ))}
                 </div>
-                <HeavyButton
-                  link="/"
-                  content={traduction[selectedLanguage]['Retour à la recherche']}
-                  icon={faArrowLeft}
-                />
+                <div className="flex gap-3">
+                  <LightBlueTag
+                    icon={faUpRightAndDownLeftFromCenter}
+                    value={`${traduction[selectedLanguage]['Taille']} | ${pokemon.height}`}
+                  />
+                  <LightBlueTag
+                    icon={faWeightHanging}
+                    value={`${traduction[selectedLanguage]['Poids']} | ${pokemon.weight}`}
+                  />
+                </div>
               </div>
+              <HeavyButton
+                link="/"
+                content={traduction[selectedLanguage]['Retour à la recherche']}
+                icon={faArrowLeft}
+              />
             </div>
+          </div>
 
-            <div className="mt-16 relative">
-              <TitleSection value={traduction[selectedLanguage]['Compétences']}></TitleSection>
-
-              <div className="relative gap-3 flex flex-wrap w-full">
-                {PokemonData[pokemonId].moves.map((element) => (
-                  <RawTag key={element} value={element} icon={faExplosion} />
-                ))}
-              </div>
+          <div className="mt-16 relative">
+            <TitleSection value={traduction[selectedLanguage]['Compétences']} />
+            <div className="relative gap-3 flex flex-wrap w-full">
+              {pokemon.moves.map((move) => (
+                <RawTag key={move} value={move} icon={faExplosion} />
+              ))}
             </div>
-          </ContentCard>
-        </div>
+          </div>
+        </ContentCard>
       </div>
-    </>
+    </div>
   )
 }

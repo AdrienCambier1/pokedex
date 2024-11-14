@@ -6,11 +6,9 @@ import { useContext, useState } from 'react'
 import { SearchBar } from '../../Components/Inputs'
 import { MainTitle } from '../../Components/Titles'
 import { TypeFilterButton } from '../../Components/Buttons'
-import { Link } from 'react-router-dom'
 
 export default function Home() {
   const { selectedLanguage } = useContext(LanguageContext)
-
   const [selectedTypes, setSelectedTypes] = useState([])
 
   const handleSelectedTypes = (type) => {
@@ -43,7 +41,7 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-wrap gap-5 mt-10 relative">
-        <PokemonContainer selectedTypes={selectedTypes}></PokemonContainer>
+        <PokemonContainer selectedTypes={selectedTypes} />
       </div>
     </>
   )

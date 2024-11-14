@@ -1,6 +1,6 @@
 import types from '../../Data/types.json'
 import { LanguageContext } from '../../Contexts/LanguageContext'
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 export default function Type({ value }) {
   const { selectedLanguage } = useContext(LanguageContext)
