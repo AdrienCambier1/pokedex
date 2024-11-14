@@ -5,9 +5,10 @@ export default function HamburgerButton({ onClick }) {
   return (
     <button
       onClick={onClick}
-      className="flex sm:hidden h-8 w-8 items-center justify-center rounded-lg border dark:border-zinc-700 border-zinc-200 dark:text-zinc-300 text-zinc-600 dark:hover:bg-zinc-800 hover:bg-zinc-100"
+      className="flex sm:hidden h-8 w-8 items-center justify-center rounded-lg"
     >
-      <FontAwesomeIcon icon={faBars} className="h-3" />
+      <span className="button-background"></span>
+      <FontAwesomeIcon icon={faBars} className="h-3 z-20 text-white" />
     </button>
   )
 }
