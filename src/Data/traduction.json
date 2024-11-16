@@ -12,7 +12,9 @@
     "Retour": "돌아가기",
     "Page introuvable": "페이지를 찾을 수 없습니다",
     "Aucun résultat": "결과 없음",
-    "Menu": "메뉴"
+    "Menu": "메뉴",
+    "Pokémon précédent": "이전 포켓몬",
+    "Pokémon suivant": "다음 포켓몬"
   },
   "ja": {
     "Thème": "テーマ",
@@ -27,7 +29,9 @@
     "Retour": "戻る",
     "Page introuvable": "ページが見つかりません",
     "Aucun résultat": "結果がありません",
-    "Menu": "メニュー"
+    "Menu": "メニュー",
+    "Pokémon précédent": "前のポケモン",
+    "Pokémon suivant": "次のポケモン"
   },
   "fr": {
     "Thème": "Thème",
@@ -42,7 +46,9 @@
     "Retour": "Retour",
     "Page introuvable": "Page introuvable",
     "Aucun résultat": "Aucun résultat",
-    "Menu": "Menu"
+    "Menu": "Menu",
+    "Pokémon précédent": "Pokémon précédent",
+    "Pokémon suivant": "Pokémon suivant"
   },
   "de": {
     "Thème": "Thema",
@@ -57,7 +63,9 @@
     "Retour": "Zurück",
     "Page introuvable": "Seite nicht gefunden",
     "Aucun résultat": "Keine Ergebnisse",
-    "Menu": "Menü"
+    "Menu": "Menü",
+    "Pokémon précédent": "Vorheriges Pokémon",
+    "Pokémon suivant": "Nächstes Pokémon"
   },
   "es": {
     "Thème": "Tema",
@@ -72,7 +80,9 @@
     "Retour": "Volver",
     "Page introuvable": "Página no encontrada",
     "Aucun résultat": "Sin resultados",
-    "Menu": "Menú"
+    "Menu": "Menú",
+    "Pokémon précédent": "Pokémon anterior",
+    "Pokémon suivant": "Siguiente Pokémon"
   },
   "it": {
     "Thème": "Tema",
@@ -87,7 +97,9 @@
     "Retour": "Indietro",
     "Page introuvable": "Pagina non trovata",
     "Aucun résultat": "Nessun risultato",
-    "Menu": "Menu"
+    "Menu": "Menu",
+    "Pokémon précédent": "Pokémon precedente",
+    "Pokémon suivant": "Pokémon successivo"
   },
   "en": {
     "Thème": "Theme",
@@ -102,6 +114,8 @@
     "Retour": "Back",
     "Page introuvable": "Page not found",
     "Aucun résultat": "No results",
-    "Menu": "Menu"
+    "Menu": "Menu",
+    "Pokémon précédent": "Previous Pokémon",
+    "Pokémon suivant": "Next Pokémon"
   }
 }

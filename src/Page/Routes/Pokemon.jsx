@@ -62,12 +62,12 @@ export default function Pokemon() {
           <div className="w-full max-w-screen-md mt-10">
             <div className="py-4 w-full flex justify-between items-center gap-4">
               <TextButton
-                value="Pokémon précédent"
+                value={traduction[selectedLanguage]['Pokémon précédent']}
                 link={`/pokemon/${parsedId - 1}`}
                 disabled={!data[id - 1]}
               />
               <TextButton
-                value="Pokémon suivant"
+                value={traduction[selectedLanguage]['Pokémon suivant']}
                 link={`/pokemon/${parsedId + 1}`}
                 disabled={!data[id + 1]}
                 isOnRight={true}
