@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import traduction from '../../Data/traduction.json'
 import { LanguageContext, DataContext, LoadingContext } from '../../Contexts'
 import * as BackgroundImages from '../../Images/BackgroundType'
-import { HeavyButton } from '../../Components/Buttons'
+import { HeavyButton, TextButton } from '../../Components/Buttons'
 import { ContentCard, ImageCard } from '../../Components/Cards'
 import { MainTitle, TitleSection } from '../../Components/Titles'
 import { LightBlueTag, RawTag, Highlight, Type } from '../../Components/Tags'
@@ -24,13 +24,14 @@ export default function Pokemon() {
   if (loadingData || loadingTypes) {
     return null
   } else {
-    const id = parseInt(pokemonId, 10)
+    const parsedId = parseInt(pokemonId, 10)
+    const id = parsedId - 1
     const pokemon = data[id]
 
     if (!pokemon) {
       return <NotFound />
     } else {
-      const formattedId = data[pokemonId].id.toString().padStart(3, '0')
+      const formattedId = data[id].id.toString().padStart(3, '0')
 
       const typeImages = {
         poison: BackgroundImages.poison,
@@ -58,7 +59,20 @@ export default function Pokemon() {
         <div className="relative w-full flex flex-col items-center">
           <MainTitle value={pokemon.names[selectedLanguage]} />
 
-          <div className="max-w-screen-md mt-10">
+          <div className="w-full max-w-screen-md mt-10">
+            <div className="py-4 w-full flex justify-between items-center gap-4">
+              <TextButton
+                value="Pokémon précédent"
+                link={`/pokemon/${parsedId - 1}`}
+                disabled={!data[id - 1]}
+              />
+              <TextButton
+                value="Pokémon suivant"
+                link={`/pokemon/${parsedId + 1}`}
+                disabled={!data[id + 1]}
+                isOnRight={true}
+              />
+            </div>
             <ContentCard>
               <TitleSection value={traduction[selectedLanguage]['Statistiques']} />
 
