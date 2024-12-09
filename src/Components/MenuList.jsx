@@ -13,6 +13,7 @@ export default function MenuList() {
 
   function handleClose() {
     setIsSelectorVisible(false)
+    ScrollToTop()
   }
 
   function handleToggleTheme() {
@@ -34,6 +35,13 @@ export default function MenuList() {
       document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [])
+
+  const ScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }
 
   return (
     <div className="relative block sm:hidden" ref={menuRef}>
