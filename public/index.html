@@ -7,10 +7,8 @@
         (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
       ) {
         document.documentElement.classList.add('dark')
-        document.documentElement.style.background = 'black'
       } else {
         document.documentElement.classList.remove('dark')
-        document.documentElement.style.background = '#fafafa'
       }
     </script>
     <meta charset="utf-8" />

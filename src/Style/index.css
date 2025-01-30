@@ -68,3 +68,7 @@
   height: 100%;
   filter: blur(0.5rem);
 }
+
+body {
+  @apply bg-zinc-100 dark:bg-zinc-900;
+}
