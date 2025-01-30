@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { Home, NotFound, Pokemon, RickRoll } from './Routes'
+import { Home, NotFound, Pokemon } from './Routes'
 
 export default function Main() {
   return (
@@ -8,7 +8,6 @@ export default function Main() {
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
         <Route path="pokemon/:pokemonId" element={<Pokemon />} />
-        <Route path="rickroll" element={<RickRoll />} />
       </Routes>
     </main>
   )
