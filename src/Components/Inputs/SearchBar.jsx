@@ -11,13 +11,13 @@ export default function SearchBar({ placeholder }) {
   }
 
   return (
-    <div className="flex items-center justify-start pl-5 h-fit rounded-full font-['Afacad'] dark:bg-zinc-700 bg-white w-full mt-10 shadow-md shadow-gray-300/50 dark:shadow-black/50 max-w-3xl">
+    <div className="flex items-center justify-start px-5 h-fit rounded-full font-['Afacad'] dark:bg-zinc-700 bg-white w-full mt-10 shadow-md shadow-gray-300/50 dark:shadow-black/50 max-w-3xl">
       <FontAwesomeIcon
         className="dark:text-white text-black h-4 transition-all ease-in-out"
         icon={faMagnifyingGlass}
       />
       <input
-        className="dark:text-white text-black placeholder-zinc-400 focus:outline-none w-full h-8 py-5 rounded-full bg-transparent ml-5"
+        className="dark:text-white text-black placeholder-zinc-400 focus:outline-none w-full h-8 py-5 bg-transparent ml-5"
         placeholder={placeholder}
         value={searchTerm}
         onChange={handleChange}
