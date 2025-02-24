@@ -3,7 +3,7 @@ import { Home, NotFound, Pokemon } from './Routes'
 
 export default function Main() {
   return (
-    <main className="min-h-screen pt-28 p-10 relative bg-zinc-100 dark:bg-zinc-900">
+    <main className="min-h-screen pt-28 p-8">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
