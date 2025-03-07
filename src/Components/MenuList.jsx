@@ -11,15 +11,15 @@ export default function MenuList() {
   const [isSelectorVisible, setIsSelectorVisible] = useState(false)
   const menuRef = useRef(null)
 
-  function handleClose() {
+  function handleScrollToTop() {
     setIsSelectorVisible(false)
-    ScrollToTop()
+    scrollToTop()
   }
 
   function handleToggleTheme() {
     const newTheme = Theme === 'dark' ? 'light' : 'dark'
     setTheme(newTheme)
-    handleClose()
+    setIsSelectorVisible(false)
   }
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function MenuList() {
     }
   }, [])
 
-  const ScrollToTop = () => {
+  function scrollToTop() {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
@@ -62,7 +62,7 @@ export default function MenuList() {
             icon={faHouse}
             data={traduction[selectedLanguage]['Accueil']}
             link="/"
-            onClick={handleClose}
+            onClick={handleScrollToTop}
           />
         </NavContainer>
       )}
