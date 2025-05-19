@@ -25,7 +25,7 @@ export default function Header() {
   }
 
   return (
-    <header className="w-full border-b border-white dark:border-zinc-700 dark:bg-zinc-900 bg-white shadow-md shadow-gray-300/50 dark:shadow-none h-16 flex fixed z-50 items-center justify-between px-8">
+    <header className="w-full border-b border-white dark:border-zinc-700 dark:bg-zinc-900 bg-white shadow-md shadow-gray-300/50 dark:shadow-none h-16 flex fixed z-50 items-center justify-between px-4 sm:px-8">
       <Link onClick={ScrollToTop} to="/" className="h-8 relative">
         <img className="h-full" src={logo} alt={logo} />
       </Link>
