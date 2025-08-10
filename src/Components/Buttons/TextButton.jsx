@@ -8,7 +8,7 @@ export default function TextButton({ value, isOnRight, onClick, link, disabled }
       <Link
         className={`${
           disabled && 'opacity-50 cursor-not-allowed'
-        } flex items-center text-end font-['Afacad'] text-md text-black dark:text-white`}
+        } flex items-center text-end text-md text-black dark:text-white`}
         disabled={disabled}
         onClick={!disabled && onClick}
         to={!disabled && link}
@@ -22,7 +22,7 @@ export default function TextButton({ value, isOnRight, onClick, link, disabled }
       <Link
         className={`${
           disabled && 'opacity-50 cursor-not-allowed'
-        } flex items-center text-start font-['Afacad'] text-md text-black dark:text-white`}
+        } flex items-center text-start text-md text-black dark:text-white`}
         disabled={disabled}
         onClick={!disabled && onClick}
         to={!disabled && link}

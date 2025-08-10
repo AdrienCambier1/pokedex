@@ -11,7 +11,7 @@ export default function SearchBar({ placeholder }) {
   }
 
   return (
-    <div className="flex items-center justify-start px-5 h-fit rounded-full font-['Afacad'] dark:bg-zinc-700 bg-white w-full mt-10 shadow-md shadow-gray-300/50 dark:shadow-black/50 max-w-3xl">
+    <div className="flex items-center justify-start px-5 h-fit rounded-full dark:bg-zinc-700 bg-white w-full mt-10 shadow max-w-3xl">
       <FontAwesomeIcon
         className="dark:text-white text-black h-4 transition-all ease-in-out"
         icon={faMagnifyingGlass}

@@ -37,7 +37,7 @@ export default function PokemonCard({ name, img, types, id }) {
         <img src={img} />
       </ImageCard>
       <div>
-        <p className="dark:text-white text-black text-xl mt-5 font-['Afacad]">{name}</p>
+        <p className="dark:text-white text-black text-xl mt-5">{name}</p>
         <div className="flex flex-wrap gap-3 mt-5">
           {types.map((element) => (
             <Type key={element} value={element} />

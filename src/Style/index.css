@@ -2,24 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Afacad';
-  src: url('./font/Afacad_Flux/AfacadFlux.ttf') format('truetype');
+@layer base {
+  @font-face {
+    font-family: 'Afacad';
+    src: url('./font/Afacad_Flux/AfacadFlux.ttf') format('truetype');
+  }
+
+  body {
+    @apply bg-zinc-100 dark:bg-zinc-900 font-['Afacad'];
+  }
 }
 
-body {
-  @apply bg-zinc-100 dark:bg-zinc-900;
+@layer components {
+  /* HTML: <div class="loader"></div> */
+  .loader {
+    width: 60px;
+    aspect-ratio: 2;
+    --_g: no-repeat radial-gradient(circle closest-side, #71717a 90%, #0000);
+    background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
+    background-size: calc(100% / 3) 50%;
+    animation: l3 1s infinite linear;
+  }
 }
 
-/* HTML: <div class="loader"></div> */
-.loader {
-  width: 60px;
-  aspect-ratio: 2;
-  --_g: no-repeat radial-gradient(circle closest-side, #71717a 90%, #0000);
-  background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
-  background-size: calc(100% / 3) 50%;
-  animation: l3 1s infinite linear;
+@layer utilities {
+  .dark-text {
+    @apply text-zinc-700 dark:text-zinc-300;
+  }
+
+  .shadow {
+    @apply shadow-md dark:shadow-black/10 shadow-gray-300/50;
+  }
 }
+
 @keyframes l3 {
   20% {
     background-position: 0% 0%, 50% 50%, 100% 50%;
@@ -33,42 +48,4 @@ body {
   80% {
     background-position: 0% 50%, 50% 50%, 100% 100%;
   }
-}
-
-/* Gradient shadow button */
-.button-background {
-  position: absolute;
-  top: 1px;
-  right: 1px;
-  bottom: 1px;
-  left: 1px;
-  border-radius: 4px;
-  background: linear-gradient(-90deg, #007cf0, #00dfd8, #ff0080, #007cf0);
-  background-size: 400% 100%;
-  border: none;
-  padding: 0;
-  margin: 0;
-  animation: backgroundAnimation 8s ease-in-out infinite;
-  border-radius: 0.375rem;
-}
-
-@keyframes backgroundAnimation {
-  50% {
-    background-position: 140% 50%;
-    transform: skew(-2deg);
-  }
-}
-
-.button-background:after {
-  content: '';
-  position: absolute;
-  background-size: inherit;
-  background-image: inherit;
-  -webkit-animation: inherit;
-  animation: inherit;
-  left: 0;
-  right: 0;
-  top: 2px;
-  height: 100%;
-  filter: blur(0.5rem);
 }

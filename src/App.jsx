@@ -10,6 +10,7 @@ import {
 } from './Contexts'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { ScrollToTop } from './Functions'
+import Footer from './Page/Footer'
 
 function App() {
   return (
@@ -20,10 +21,11 @@ function App() {
           <TypesProvider>
             <ThemeProvider>
               <LanguageProvider>
-                <Header></Header>
+                <Header />
                 <SearchProvider>
-                  <Main></Main>
+                  <Main />
                 </SearchProvider>
+                <Footer />
               </LanguageProvider>
             </ThemeProvider>
           </TypesProvider>

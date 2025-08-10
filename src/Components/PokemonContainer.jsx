@@ -30,7 +30,7 @@ export default function PokemonContainer({ selectedTypes }) {
   } else if (filteredPokemon.length === 0) {
     return (
       <div className="w-full flex justify-center">
-        <p className="font-bold font-['Afacad'] text-neutral-500 text-2xl w-fit relative">
+        <p className="font-bold text-neutral-500 text-2xl w-fit relative">
           {traduction[selectedLanguage]['Aucun résultat']}
         </p>
       </div>

@@ -23,7 +23,7 @@ export default function Type({ value }) {
     return (
       <div
         style={{ backgroundColor: typeColor, boxShadow: `0 0 10px 2px ${shadowColor}` }}
-        className="text-center text-white rounded-md px-5 font-['Afacad'] h-fit w-fit shadow-md"
+        className="text-center text-white rounded-md px-5 h-fit w-fit shadow-md"
       >
         {typeTraducted}
       </div>
