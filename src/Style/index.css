@@ -31,7 +31,7 @@
   }
 
   .shadow {
-    @apply shadow-md dark:shadow-black/10 shadow-gray-300/50;
+    @apply shadow-[5px_12px_20px_rgba(36,37,38,0.075)] dark:shadow-none;
   }
 }
 
