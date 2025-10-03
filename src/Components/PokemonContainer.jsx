@@ -37,7 +37,7 @@ export default function PokemonContainer({ selectedTypes }) {
     )
   } else {
     return (
-      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {filteredPokemon.map(({ id, names, image, types }) => (
           <PokemonCard key={id} id={id} name={names[selectedLanguage]} img={image} types={types} />
         ))}
