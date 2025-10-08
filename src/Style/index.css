@@ -9,7 +9,7 @@
   }
 
   body {
-    @apply bg-zinc-100 dark:bg-zinc-900 font-['Afacad'];
+    @apply bg-zinc-100 dark:bg-zinc-900 font-['Afacad'] overflow-x-hidden;
   }
 }
 
