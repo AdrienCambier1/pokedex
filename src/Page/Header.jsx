@@ -1,4 +1,4 @@
-import logo from '../Images/logo.png'
+import logo from '../Images/logo.webp'
 import traduction from '../Data/traduction.json'
 import { faHouse } from '@fortawesome/free-solid-svg-icons'
 import { faCircleHalfStroke } from '@fortawesome/free-solid-svg-icons'
