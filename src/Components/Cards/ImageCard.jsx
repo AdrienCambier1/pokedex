@@ -7,6 +7,7 @@ export default function ImageCard({ children, image }) {
     <div className="bg-zinc-100 dark:bg-zinc-900 w-full rounded-lg flex flex-col overflow-hidden relative">
       <img
         src={image}
+        alt=""
         onLoad={() => setIsLoading(false)}
         onError={() => setIsLoading(false)}
         style={{ display: isLoading ? 'none' : 'block' }}

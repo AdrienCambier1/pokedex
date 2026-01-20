@@ -34,7 +34,7 @@ export default function PokemonCard({ name, img, types, id }) {
     <ContentCard link={'pokemon/' + id}>
       <ImageCard image={typeImage}>
         <Highlight value={`No. ${formattedId}`} />
-        <img src={img} />
+        <img src={img} alt={name} />
       </ImageCard>
       <div>
         <p className="dark:text-white text-black text-xl mt-5">{name}</p>
