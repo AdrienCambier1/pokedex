@@ -59,66 +59,64 @@ export default function Pokemon() {
         <div className="relative w-full flex flex-col items-center">
           <MainTitle value={pokemon.names[selectedLanguage]} />
 
-          <div className="w-full max-w-screen-md mt-10">
-            <div className="py-4 w-full flex justify-between items-center gap-4">
-              <TextButton
-                value={traduction[selectedLanguage]['Pokémon précédent']}
-                link={`/pokemon/${parsedId - 1}`}
-                disabled={!data[id - 1]}
-              />
-              <TextButton
-                value={traduction[selectedLanguage]['Pokémon suivant']}
-                link={`/pokemon/${parsedId + 1}`}
-                disabled={!data[id + 1]}
-                isOnRight={true}
-              />
-            </div>
-            <ContentCard>
-              <TitleSection value={traduction[selectedLanguage]['Statistiques']} />
-
-              <div className="flex gap-4 relative flex-col md:flex-row">
-                <div className="w-full md:w-52 relative">
-                  <ImageCard image={typeImage}>
-                    <Highlight value={`No. ${formattedId}`} />
-                    <img src={pokemon.image} alt={pokemon.names[selectedLanguage]} />
-                  </ImageCard>
-                </div>
-                <div className="flex flex-col gap-3 justify-between">
-                  <div className="flex flex-col gap-3">
-                    <div className="gap-3 flex">
-                      {pokemon.types.map((type) => (
-                        <Type key={type} value={type} />
-                      ))}
-                    </div>
-                    <div className="flex gap-3">
-                      <LightBlueTag
-                        icon={faUpRightAndDownLeftFromCenter}
-                        value={`${traduction[selectedLanguage]['Hauteur']} | ${pokemon.height}`}
-                      />
-                      <LightBlueTag
-                        icon={faWeightHanging}
-                        value={`${traduction[selectedLanguage]['Poids']} | ${pokemon.weight}`}
-                      />
-                    </div>
-                  </div>
-                  <HeavyButton
-                    link="/"
-                    content={traduction[selectedLanguage]['Retour à la recherche']}
-                    icon={faArrowLeft}
-                  />
-                </div>
-              </div>
-
-              <div className="mt-16 relative">
-                <TitleSection value={traduction[selectedLanguage]['Compétences']} />
-                <div className="relative gap-3 flex flex-wrap w-full">
-                  {pokemon.moves.map((move) => (
-                    <RawTag key={move} value={move} icon={faExplosion} />
-                  ))}
-                </div>
-              </div>
-            </ContentCard>
+          <div className="mt-10 py-4 w-full flex justify-between items-center gap-4">
+            <TextButton
+              value={traduction[selectedLanguage]['Pokémon précédent']}
+              link={`/pokemon/${parsedId - 1}`}
+              disabled={!data[id - 1]}
+            />
+            <TextButton
+              value={traduction[selectedLanguage]['Pokémon suivant']}
+              link={`/pokemon/${parsedId + 1}`}
+              disabled={!data[id + 1]}
+              isOnRight={true}
+            />
           </div>
+          <ContentCard>
+            <TitleSection value={traduction[selectedLanguage]['Statistiques']} />
+
+            <div className="flex gap-4 relative flex-col md:flex-row">
+              <div className="w-full md:w-52 relative">
+                <ImageCard image={typeImage}>
+                  <Highlight value={`No. ${formattedId}`} />
+                  <img src={pokemon.image} alt={pokemon.names[selectedLanguage]} />
+                </ImageCard>
+              </div>
+              <div className="flex flex-col gap-3 justify-between">
+                <div className="flex flex-col gap-3">
+                  <div className="gap-3 flex">
+                    {pokemon.types.map((type) => (
+                      <Type key={type} value={type} />
+                    ))}
+                  </div>
+                  <div className="flex gap-3">
+                    <LightBlueTag
+                      icon={faUpRightAndDownLeftFromCenter}
+                      value={`${traduction[selectedLanguage]['Hauteur']} | ${pokemon.height}`}
+                    />
+                    <LightBlueTag
+                      icon={faWeightHanging}
+                      value={`${traduction[selectedLanguage]['Poids']} | ${pokemon.weight}`}
+                    />
+                  </div>
+                </div>
+                <HeavyButton
+                  link="/"
+                  content={traduction[selectedLanguage]['Retour à la recherche']}
+                  icon={faArrowLeft}
+                />
+              </div>
+            </div>
+
+            <div className="mt-16 relative">
+              <TitleSection value={traduction[selectedLanguage]['Compétences']} />
+              <div className="relative gap-3 flex flex-wrap w-full">
+                {pokemon.moves.map((move) => (
+                  <RawTag key={move} value={move} icon={faExplosion} />
+                ))}
+              </div>
+            </div>
+          </ContentCard>
         </div>
       )
     }

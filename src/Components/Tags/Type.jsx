@@ -6,15 +6,7 @@ export default function Type({ value }) {
   const { loadingData, loadingTypes } = useContext(LoadingContext)
   const { selectedLanguage } = useContext(LanguageContext)
 
-  const hexToRgba = (hex, opacity) => {
-    let r = parseInt(hex.slice(1, 3), 16)
-    let g = parseInt(hex.slice(3, 5), 16)
-    let b = parseInt(hex.slice(5, 7), 16)
-    return `rgba(${r}, ${g}, ${b}, ${opacity})`
-  }
-
   const typeColor = types[value].backgroundColor
-  const shadowColor = hexToRgba(typeColor, 0.5)
   const typeTraducted = types[value].translations[selectedLanguage]
 
   if (loadingData || loadingTypes) {
@@ -22,8 +14,8 @@ export default function Type({ value }) {
   } else {
     return (
       <div
-        style={{ backgroundColor: typeColor, boxShadow: `0 0 10px 2px ${shadowColor}` }}
-        className="text-center text-white rounded-md px-5 h-fit w-fit shadow-md"
+        style={{ backgroundColor: typeColor }}
+        className="text-center text-white rounded-full px-4 h-8 w-fit flex items-center justify-center"
       >
         {typeTraducted}
       </div>
